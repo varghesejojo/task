@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container mt-3">
+        <div class="container mt-3 col-sm-12 pb-50">
+            <div class="row">
+                {% for post in blog %}
+                <div class="col-md-4">
+                    <div class="shadow card mt-3" style="width: 100%;">
+                        <img class="card-img-top" src="{{ post.image.url }}"  width="200" height="200" alt="{{ post.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <a href='{% url "detail" post.id %}' class="btn btn-primary">Detail</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
